@@ -2,7 +2,7 @@
 
 # Script附檔內容
 
-portfowarding.ps1 為 設置portproxy 和firewall
+portfowarding.ps1 為 設置portproxy 和firewall (需確認distro已安裝net-tools,以使用ifconfig)
 
 startWSL.ps1 為 將wsl內的bond0 mac address設置為Host機mac address,及啟動WSL. (需自行更改ubuntu_password密碼)
 

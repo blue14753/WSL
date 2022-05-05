@@ -6,11 +6,17 @@ startWSL.ps1 為 將wsl內的bond0 mac address設置為Host機mac address,及啟
 
 # 安裝WSL2
 1.以系統管理員打開CMD
+
 2.輸入wsl --install -d Ubuntu-20.04
+
 3.等待進度完成後重開機,會自動跳出後續設定Ubuntu帳密步驟
+
 4.設定完後,即安裝完成
+
 5.安裝完WSL後,Win11需要更新(必要)[Windows Download the Linux kernel update package](https://docs.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package)
+
 6.開啟Powershell 輸入 Set-ExecutionPolicy RemoteSigned(之後啟script檔不用手動確認)
+
 7.完成
 
 # 安裝Docker在WSL2裡

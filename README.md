@@ -30,6 +30,11 @@ sudo service docker start
 不可走一般docker安裝方式,因wsl裡未支援systemMd
 
 2.[docker-compose為正常安裝步驟](https://docs.docker.com/compose/install/)
+此處使用standalone binary on Linux systems安裝docker-compose
+```
+curl -SL https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+```
 
 # 重新安裝SSH在WSL2裡(如需用到container內ssh Host情況)
 1.[需要在distro重新安裝openssh-server](https://blog.csdn.net/hxc2101/article/details/113617870)

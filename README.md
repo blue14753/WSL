@@ -21,6 +21,7 @@ startWSL.ps1 為 將wsl內的bond0 mac address設置為Host機mac address,及啟
 
 # 安裝Docker在WSL2裡
 1.[在wsl2 distro內安裝docker](https://docs.docker.com/engine/install/ubuntu/)
+
 請參照Install using the convenience script,原生linux安装docker以script方式安裝
 ```
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -30,6 +31,7 @@ sudo service docker start
 不可走一般docker安裝方式,因wsl裡未支援systemMd
 
 2.[docker-compose為正常安裝步驟](https://docs.docker.com/compose/install/)
+
 此處使用standalone binary on Linux systems安裝docker-compose
 ```
 curl -SL https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose

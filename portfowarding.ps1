@@ -24,5 +24,6 @@ for ($i = 0; $i -lt $ports.length; $i++) {
 }
 
 Invoke-Expression "netsh interface portproxy show v4tov4";
+Read-Host -Prompt "Please press enter to close";
 
 

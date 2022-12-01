@@ -7,22 +7,22 @@ portfowarding.ps1 為 設置portproxy 和firewall (需確認distro已安裝net-t
 startWSL.ps1 為 將wsl內的bond0 mac address設置為Host機mac address,及啟動WSL. (需自行更改ubuntu_password密碼)
 
 # 安裝WSL2
-1.以系統管理員打開CMD
+1. 以系統管理員打開CMD
 
-2.輸入wsl --install -d Ubuntu-20.04
+2. 輸入wsl --install -d Ubuntu-20.04
 
-3.等待進度完成後重開機,會自動跳出後續設定Ubuntu帳密步驟
+3. 等待進度完成後重開機,會自動跳出後續設定Ubuntu帳密步驟
 
-4.設定完後,即安裝完成
+4. 設定完後,即安裝完成
 
-5.安裝完WSL後,Win11需要更新(必要)[Windows Download the Linux kernel update package](https://docs.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package)
+5. 安裝完WSL後,Win11需要更新(必要)[Windows Download the Linux kernel update package](https://docs.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package)
 
-6.開啟Powershell 輸入 Set-ExecutionPolicy RemoteSigned(之後啟script檔不用手動確認)
+6. 開啟Powershell 輸入 Set-ExecutionPolicy RemoteSigned(之後啟script檔不用手動確認)
 
-7.完成
+7. 完成
 
 # 安裝Docker在WSL2裡
-1.[在wsl2 distro內安裝docker](https://docs.docker.com/engine/install/ubuntu/)
+1. [在wsl2 distro內安裝docker](https://docs.docker.com/engine/install/ubuntu/)
 
 請參照Install using the convenience script,原生linux安装docker以script方式安裝
 ```
@@ -32,7 +32,7 @@ sudo service docker start
 ```
 不可走一般docker安裝方式,因wsl裡未支援systemMd
 
-2.[docker-compose為正常安裝步驟](https://docs.docker.com/compose/install/)
+2. [docker-compose為正常安裝步驟](https://docs.docker.com/compose/install/)
 
 此處使用standalone binary on Linux systems安裝docker-compose
 ```
@@ -41,7 +41,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 ```
 
 # 重新安裝SSH在WSL2裡(如需用到container內ssh Host情況)
-1.[需要在distro重新安裝openssh-server](https://blog.csdn.net/hxc2101/article/details/113617870)
+1. [需要在distro重新安裝openssh-server](https://blog.csdn.net/hxc2101/article/details/113617870)
 
 ```
 sudo apt purge -y openssh-server
@@ -54,7 +54,7 @@ sudo service ssh restart
 touch /etc/wsl.conf
 ```
 
-2.加入boot docker service 內容到 wsl.conf
+2. 加入boot docker service 內容到 wsl.conf
 
 ```
 # Set a command to run when a new WSL instance launches. This example starts the Docker container service.
@@ -63,7 +63,7 @@ command = service docker start && service ssh start
 ```
 
 # 將WSL內localhost portforward至Host機
-1.需要設portproxy 和firewall(已寫成script檔: portfowarding.ps1)
+1. 需要設portproxy 和firewall(已寫成script檔: portfowarding.ps1)
 
 ```
 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit }

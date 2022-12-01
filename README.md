@@ -49,7 +49,12 @@ sudo apt install -y openssh-server
 sudo service ssh restart
 ```
 # 設置WSL開機時自動啟用docker & ssh功能
-1.加入boot docker service
+1. 在 /etc 建立 wsl.conf
+```
+touch /etc/wsl.conf
+```
+
+2.加入boot docker service 內容到 wsl.conf
 
 ```
 # Set a command to run when a new WSL instance launches. This example starts the Docker container service.
